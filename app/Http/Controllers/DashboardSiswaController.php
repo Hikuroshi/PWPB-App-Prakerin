@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
-class SiswaController extends Controller
+class DashboardSiswaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,10 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        //
+        return view('index', [
+            'title' => 'Tampil Data',
+            'siswas' => Siswa::latest()->get()
+        ]);
     }
 
     /**

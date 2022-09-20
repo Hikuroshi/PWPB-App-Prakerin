@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DashboardSiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,8 @@ Route::controller(SiswaController::class)->group(function(){
     Route::get('/biodata', 'biodata');
     Route::get('/galeri', 'galeri');
     Route::get('/kontak', 'kontak');
+});
+
+Route::controller(DashboardSiswaController::class)->group(function(){
+    Route::get('/', 'index');
 });
